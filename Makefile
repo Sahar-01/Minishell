@@ -7,7 +7,8 @@ INCLUDE_DIR = inc
 LIBFT_A = $(LIBFT_DIR)/libft.a
 
 SRC_FILES = \
-	$(SRC_DIR)/main.c
+	$(SRC_DIR)/main.c \
+	$(SRC_DIR)/error_handler.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
@@ -19,7 +20,7 @@ CFLAGS = -Wall -Wextra -Werror -I$(INCLUDE_DIR) -I$(LIBFT_DIR)/inc
 all: $(LIBFT_A) $(NAME)
 
 $(NAME): $(OBJ_FILES)
-	@$(CC) $(OBJ_FILES) $(LIBFT_A) -o $(NAME)
+	@$(CC) $(OBJ_FILES) $(LIBFT_A) -lreadline -o $(NAME)
 
 $(LIBFT_A):
 	@$(MAKE) -C $(LIBFT_DIR)

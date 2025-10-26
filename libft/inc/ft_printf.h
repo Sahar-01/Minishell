@@ -13,6 +13,7 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+int		ft_printf(const char *format, ...);
 int		ft_printstr(char *s);
 int		ft_printchar(int c);
 int		ft_printinteger(int n);
