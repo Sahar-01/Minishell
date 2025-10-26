@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   prompt_builder.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scheragh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 14:45:46 by scheragh          #+#    #+#             */
-/*   Updated: 2025/10/26 17:01:00 by scheragh         ###   ########.fr       */
+/*   Updated: 2025/10/26 18:56:12 by scheragh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../inc/minishell.h"
@@ -54,10 +54,13 @@ const char	*print_prompt(void)
 	i = 0;
 	username = get_username();
 	cwd = get_cwd();
-	i = ft_strcpy(prompt, CYAN, i);
+	i = ft_strcpy(prompt, BGBLUE, i);
+	i = ft_strcpy(prompt, WHITE, i);
 	i = ft_strcpy(prompt, username, i);
-	i = ft_strcpy(prompt, "@42London ", i);
-	i = ft_strcpy(prompt, BLUE, i);
+	i = ft_strcpy(prompt, "@42London", i);
+	i = ft_strcpy(prompt, RESET, i);
+	i = ft_strcpy(prompt, "  ", i);
+	i = ft_strcpy(prompt, GREEN, i);
 	i = ft_strcpy(prompt, cwd, i);
 	i = ft_strcpy(prompt, RESET, i);
 	i = ft_strcpy(prompt, " % ", i);

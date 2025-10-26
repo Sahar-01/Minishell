@@ -10,9 +10,10 @@
 # include <readline/history.h>
 # include "../libft/inc/libft.h"
 
-#define BLUE	"\e[1;34;1m"
-#define MAGEN	"\e[1;35;1m"
-#define CYAN	"\e[1;36;1m"
+#define WHITE	"\e[38;5;15m"
+#define GREEN	"\e[38;5;35;1m"
+#define CYAN	"\e[38;5;6;1m"
+#define BGBLUE  "\e[48;5;33;1m"
 #define RESET	"\e[0m"
 
 // 4KB Buffer size excludes null terminator
