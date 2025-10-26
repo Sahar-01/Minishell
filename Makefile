@@ -8,7 +8,9 @@ LIBFT_A = $(LIBFT_DIR)/libft.a
 
 SRC_FILES = \
 	$(SRC_DIR)/main.c \
-	$(SRC_DIR)/error_handler.c
+	$(SRC_DIR)/error_handler.c \
+	$(SRC_DIR)/utils.c \
+	$(SRC_DIR)/prompt_builder.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 

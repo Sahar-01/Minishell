@@ -1,16 +1,10 @@
 #include "../inc/minishell.h"
 
-const char	*print_prompt(void)
-{
-	const char	*prompt;
-
-	prompt = CYAN">$"RESET;
-	return prompt;
-}
 void	execute_command(char **commands)
 {
 	(void)commands;
 }
+
 char	*read_input(void)
 {
 	//char	cwd[BUFSIZ];
@@ -23,7 +17,8 @@ char	*read_input(void)
 		printf("exit\n");
 		exit(0);  // graceful exit on Ctrl+D
 	}
-	//add_history(buf); // optional: stores command in history
+	if (input[0] != '\0')
+		add_history(input);
 	return (input);
 	free(input);
 }
@@ -43,9 +38,13 @@ int	main(int argc, char **argv, char **envv)
 	{
 		input = read_input();
 		commands = ft_split(input, ';'); // assume ft_split works
+		free(input);
 		execute_command(commands); // your own logic
+		free_arr(commands);
 		if (ret == -1)
 			break;
 	}
+	// Helps with readline memory leaks
+	rl_clear_history();
 	return (0);
 }
