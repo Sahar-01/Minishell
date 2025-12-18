@@ -7,10 +7,10 @@ INCLUDE_DIR = inc
 LIBFT_A = $(LIBFT_DIR)/libft.a
 
 SRC_FILES = \
-	$(SRC_DIR)/main.c \
-	$(SRC_DIR)/error_handler.c \
-	$(SRC_DIR)/utils.c \
-	$(SRC_DIR)/prompt_builder.c
+	$(SRC_DIR)/main/main.c \
+	$(SRC_DIR)/error/error_handler.c \
+	$(SRC_DIR)/utils/prompt_builder.c \
+	$(SRC_DIR)/utils/utils.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 

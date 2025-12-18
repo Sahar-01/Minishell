@@ -9,6 +9,7 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 # include "../libft/inc/libft.h"
+# include "token.h"
 
 #define WHITE	"\e[38;5;15m"
 #define GREEN	"\e[38;5;35;1m"
